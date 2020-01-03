@@ -1,4 +1,7 @@
 import React from 'react';
+
+import Paper from '@material-ui/core/Paper';
+
 import { Header } from './components/Header';
 import { NavBar } from './components/NavBar';
 import { Overview } from './screens/Overview';
@@ -9,20 +12,16 @@ import {
 	ContactInfoProps,
 	ContactInfoItem,
 } from './components/ContactInfoItem';
+import { ContactInfo } from './components/ContactInfo';
 
 const App: React.FC = () => {
-	const contactInfoItems: ContactInfoProps[] = [
-		{ url: 'https://www.google.com', title: 'website', iconName: 'website' },
-		{ url: 'https://www.github.com', title: 'github', iconName: 'github' },
-	];
-
 	return (
 		<div>
-			<Header />
-			{contactInfoItems.map(item => {
-				return <ContactInfoItem {...item} />;
-			})}
-			<NavBar />
+			<Paper elevation={0} variant="outlined">
+				<Header />
+				<ContactInfo />
+				<NavBar selectedTab={1} />
+			</Paper>
 			<Overview />
 			<Projects />
 			<ScratchPad />

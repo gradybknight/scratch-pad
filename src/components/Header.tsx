@@ -1,30 +1,19 @@
 import React from 'react';
-import { baseStyle } from '../utils/baseStyling';
-
-interface Props {
-	theme: 'light' | 'dark';
-}
+import Typography from '@material-ui/core/Typography';
 
 export const Header = () => {
-	const styles = {
-		...baseStyle.commonComponents,
-		headline: {
-			fontSize: '2rem',
-		},
-		paddingAll: {
-			padding: '10px',
-		},
-	};
 	return (
 		<div
 			style={{
-				...styles.flexContainer,
-				...styles.centered,
-				...styles.paddingAll,
-				flexDirection: 'column',
+				display: 'flex',
+				justifyContent: 'center',
+				marginTop: '10px',
+				marginBottom: '10px',
 			}}
 		>
-			<div style={{ ...styles.headline }}>Grady Knight</div>
+			<Typography variant="h2" component="h1">
+				Grady Knight
+			</Typography>
 		</div>
 	);
 };
