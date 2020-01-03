@@ -5,9 +5,8 @@ interface Props {
 	theme: 'light' | 'dark';
 }
 
-export const NavBar = (props: Props) => {
+export const NavBar = () => {
 	const styles = {
-		...baseStyle[props.theme],
 		...baseStyle.commonComponents,
 		headline: {
 			fontSize: '2rem',

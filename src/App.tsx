@@ -11,24 +11,18 @@ import {
 } from './components/ContactInfoItem';
 
 const App: React.FC = () => {
-	const style = {
-		dark: { backgroundColor: 'black' },
-		light: { backgroundColor: 'white' },
-	};
-
 	const contactInfoItems: ContactInfoProps[] = [
 		{ url: 'https://www.google.com', title: 'website', iconName: 'website' },
 		{ url: 'https://www.github.com', title: 'github', iconName: 'github' },
 	];
 
-	const isThemeDark = false;
 	return (
-		<div style={isThemeDark ? { ...style.dark } : { ...style.light }}>
-			<Header theme={isThemeDark ? 'dark' : 'light'} />
+		<div>
+			<Header />
 			{contactInfoItems.map(item => {
 				return <ContactInfoItem {...item} />;
 			})}
-			<NavBar theme={isThemeDark ? 'dark' : 'light'} />
+			<NavBar />
 			<Overview />
 			<Projects />
 			<ScratchPad />

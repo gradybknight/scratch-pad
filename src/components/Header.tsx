@@ -5,9 +5,8 @@ interface Props {
 	theme: 'light' | 'dark';
 }
 
-export const Header = (props: Props) => {
+export const Header = () => {
 	const styles = {
-		...baseStyle[props.theme],
 		...baseStyle.commonComponents,
 		headline: {
 			fontSize: '2rem',
@@ -25,9 +24,7 @@ export const Header = (props: Props) => {
 				flexDirection: 'column',
 			}}
 		>
-			<div style={{ ...styles.headline, ...styles.primaryText }}>
-				Grady Knight
-			</div>
+			<div style={{ ...styles.headline }}>Grady Knight</div>
 		</div>
 	);
 };
