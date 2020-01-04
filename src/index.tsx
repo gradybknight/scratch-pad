@@ -6,8 +6,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const render = () => {
-	// const App = require('./App').default;
-
 	ReactDOM.render(
 		<Provider store={store}>
 			<App />
@@ -18,7 +16,4 @@ const render = () => {
 
 render();
 
-// if (process.env.NODE_ENV === 'development' && module.hot) {
-// 	module.hot.accept('./App.tsx', render);
-// }
 serviceWorker.unregister();
