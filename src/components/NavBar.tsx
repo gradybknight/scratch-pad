@@ -1,4 +1,8 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '../model/rootReducer';
+import { setCurrentTab } from '../model/globalUserInterfaceSlice';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
@@ -37,18 +41,21 @@ const navItems: NavItem[] = [
 	},
 ];
 
-export const NavBar = ({ selectedTab }: { selectedTab: number }) => {
+export const NavBar = () => {
+	const dispatch = useDispatch();
+	const { tabIndex } = useSelector(
+		(state: RootState) => state.globalUserInterface
+	);
 	const classes = useStyles();
-	const [value, setValue] = React.useState(selectedTab);
 
 	const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-		setValue(newValue);
+		dispatch(setCurrentTab(newValue));
 	};
 
 	return (
 		<Paper elevation={0} className={classes.root}>
 			<Tabs
-				value={value}
+				value={tabIndex}
 				onChange={handleChange}
 				indicatorColor="primary"
 				textColor="primary"
@@ -59,9 +66,6 @@ export const NavBar = ({ selectedTab }: { selectedTab: number }) => {
 						<Tab disableRipple={true} label={navItem.displayName} key={index} />
 					);
 				})}
-				{/* <Tab label="Item One" />
-				<Tab label="Item Two" />
-				<Tab label="Item Three" /> */}
 			</Tabs>
 		</Paper>
 	);

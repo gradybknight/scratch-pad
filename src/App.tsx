@@ -1,4 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from './model/rootReducer';
 
 import Paper from '@material-ui/core/Paper';
 
@@ -8,24 +10,25 @@ import { Overview } from './screens/Overview';
 import { Projects } from './screens/Projects';
 import { ScratchPad } from './screens/ScratchPad';
 import { Resume } from './screens/Resume';
-import {
-	ContactInfoProps,
-	ContactInfoItem,
-} from './components/ContactInfoItem';
 import { ContactInfo } from './components/ContactInfo';
 
 const App: React.FC = () => {
+	const { isModalVisible } = useSelector(
+		(state: RootState) => state.globalUserInterface
+	);
+
 	return (
 		<div>
 			<Paper elevation={0} variant="outlined">
 				<Header />
 				<ContactInfo />
-				<NavBar selectedTab={1} />
+				<NavBar />
 			</Paper>
 			<Overview />
 			<Projects />
 			<ScratchPad />
 			<Resume />
+			{isModalVisible ? <h1>MODAL</h1> : null}
 		</div>
 	);
 };
