@@ -5,16 +5,8 @@ interface OverallDisplay {
 	isModalVisible: boolean;
 }
 
-interface SetCurrentTabPayload {
-	tabIndex: number;
-}
-
-interface SetModalVisibility {
-	isModalVisible: boolean;
-}
-
 let initialState: OverallDisplay = {
-	tabIndex: 0,
+	tabIndex: 2,
 	isModalVisible: false,
 };
 
@@ -22,13 +14,11 @@ const globalUserInterfaceSlice = createSlice({
 	name: 'globalUserInterface',
 	initialState,
 	reducers: {
-		setCurrentTab(state, action: PayloadAction<SetCurrentTabPayload>) {
-			const { tabIndex } = action.payload;
-			state.tabIndex = tabIndex;
+		setCurrentTab(state, action: PayloadAction<number>) {
+			state.tabIndex = action.payload;
 		},
-		setModalVisibility(state, action: PayloadAction<SetModalVisibility>) {
-			const { isModalVisible } = action.payload;
-			state.isModalVisible = isModalVisible;
+		setModalVisibility(state, action: PayloadAction<boolean>) {
+			state.isModalVisible = action.payload;
 		},
 	},
 });

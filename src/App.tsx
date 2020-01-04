@@ -1,10 +1,6 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from './redux/rootReducer';
-import {
-	setCurrentTab,
-	setModalVisibility,
-} from './redux/globalUserInterfaceSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from './model/rootReducer';
 
 import Paper from '@material-ui/core/Paper';
 
@@ -17,8 +13,7 @@ import { Resume } from './screens/Resume';
 import { ContactInfo } from './components/ContactInfo';
 
 const App: React.FC = () => {
-	const dispatch = useDispatch;
-	const { isModalVisible, tabIndex } = useSelector(
+	const { isModalVisible } = useSelector(
 		(state: RootState) => state.globalUserInterface
 	);
 
@@ -27,7 +22,7 @@ const App: React.FC = () => {
 			<Paper elevation={0} variant="outlined">
 				<Header />
 				<ContactInfo />
-				<NavBar selectedTab={tabIndex} />
+				<NavBar />
 			</Paper>
 			<Overview />
 			<Projects />
