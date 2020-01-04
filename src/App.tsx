@@ -8,10 +8,6 @@ import { Overview } from './screens/Overview';
 import { Projects } from './screens/Projects';
 import { ScratchPad } from './screens/ScratchPad';
 import { Resume } from './screens/Resume';
-// import {
-// 	ContactInfoProps,
-// 	ContactInfoItem,
-// } from './components/ContactInfoItem';
 import { ContactInfo } from './components/ContactInfo';
 
 const App: React.FC = () => {
