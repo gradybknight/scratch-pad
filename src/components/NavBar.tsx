@@ -1,63 +1,68 @@
 import React from 'react';
-import { baseStyle } from '../utils/baseStyling';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 
-interface Props {
-	theme: 'light' | 'dark';
+const useStyles = makeStyles({
+	root: {
+		flexGrow: 1,
+	},
+});
+
+export interface NavItem {
+	displayName: string;
+	isSelected: boolean;
 }
+const navItems: NavItem[] = [
+	{
+		displayName: 'Overview',
+		isSelected: true,
+	},
+	{
+		displayName: 'Projects',
+		isSelected: false,
+	},
+	{
+		displayName: 'Scratch Pad',
+		isSelected: false,
+	},
+	{
+		displayName: 'Resume',
+		isSelected: false,
+	},
+	{
+		displayName: 'About this site',
+		isSelected: false,
+	},
+];
 
-export const NavBar = (props: Props) => {
-	const styles = {
-		...baseStyle[props.theme],
-		...baseStyle.commonComponents,
-		headline: {
-			fontSize: '2rem',
-		},
-		paddingAll: {
-			padding: '10px',
-		},
+export const NavBar = ({ selectedTab }: { selectedTab: number }) => {
+	const classes = useStyles();
+	const [value, setValue] = React.useState(selectedTab);
+
+	const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
+		setValue(newValue);
 	};
 
-	interface NavItem {
-		index: number;
-		displayName: string;
-		isSelected: boolean;
-	}
-	const navItems: NavItem[] = [
-		{
-			index: 0,
-			displayName: 'Overview',
-			isSelected: true,
-		},
-		{
-			index: 1,
-			displayName: 'Projects',
-			isSelected: false,
-		},
-		{
-			index: 2,
-			displayName: 'Scratch Pad',
-			isSelected: false,
-		},
-		{
-			index: 3,
-			displayName: 'Resume',
-			isSelected: false,
-		},
-	];
 	return (
-		<div
-			style={{
-				...styles.flexContainer,
-				...styles.centered,
-				...styles.paddingAll,
-				justifyContent: 'space-around',
-			}}
-		>
-			<ul>
-				{navItems.map(navItem => (
-					<li>{navItem.displayName}</li>
-				))}
-			</ul>
-		</div>
+		<Paper elevation={0} className={classes.root}>
+			<Tabs
+				value={value}
+				onChange={handleChange}
+				indicatorColor="primary"
+				textColor="primary"
+				centered
+			>
+				{navItems.map((navItem, index) => {
+					return (
+						<Tab disableRipple={true} label={navItem.displayName} key={index} />
+					);
+				})}
+				{/* <Tab label="Item One" />
+				<Tab label="Item Two" />
+				<Tab label="Item Three" /> */}
+			</Tabs>
+		</Paper>
 	);
 };
