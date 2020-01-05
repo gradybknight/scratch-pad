@@ -1,12 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface OverallDisplay {
+export type AllowedScreens =
+	| 'Overview'
+	| 'Projects'
+	| 'Resume'
+	| 'ScratchPad'
+	| 'AboutSite';
+export interface TabInformation {
 	tabIndex: number;
-	isModalVisible: boolean;
+	screenName: AllowedScreens;
 }
 
-let initialState: OverallDisplay = {
-	tabIndex: 2,
+type OverallDisplayState = {
+	isModalVisible: boolean;
+} & TabInformation;
+
+let initialState: OverallDisplayState = {
+	tabIndex: 0,
+	screenName: 'Overview',
 	isModalVisible: false,
 };
 
@@ -14,8 +25,9 @@ const globalUserInterfaceSlice = createSlice({
 	name: 'globalUserInterface',
 	initialState,
 	reducers: {
-		setCurrentTab(state, action: PayloadAction<number>) {
-			state.tabIndex = action.payload;
+		setCurrentTab(state, action: PayloadAction<TabInformation>) {
+			state.tabIndex = action.payload.tabIndex;
+			state.screenName = action.payload.screenName;
 		},
 		setModalVisibility(state, action: PayloadAction<boolean>) {
 			state.isModalVisible = action.payload;
