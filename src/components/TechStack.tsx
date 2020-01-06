@@ -1,74 +1,5 @@
 import React, { Fragment } from 'react';
-import { List, ListItemText, ListSubheader } from '@material-ui/core';
-
-type PhaseOfUnderstanding =
-	| 'Core Tech Stack'
-	| 'Competent'
-	| 'Actively Experimenting'
-	| 'Sooner, closer to later';
-interface Technology {
-	icon?: JSX.Element;
-	name: string;
-	url: string;
-	phaseOfUnderstanding: PhaseOfUnderstanding;
-}
-const technologies: Technology[] = [
-	{
-		name: 'JavaScript',
-		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
-		phaseOfUnderstanding: 'Core Tech Stack',
-	},
-	{
-		name: 'React',
-		url: 'https://reactjs.org/',
-		phaseOfUnderstanding: 'Core Tech Stack',
-	},
-	{
-		name: 'TypeScript',
-		url: 'https://www.typescriptlang.org/',
-		phaseOfUnderstanding: 'Core Tech Stack',
-	},
-	{
-		name: 'React Native',
-		url: 'https://facebook.github.io/react-native/',
-		phaseOfUnderstanding: 'Core Tech Stack',
-	},
-	// {
-	// 	name: 'Redux',
-	// 	url: 'https://redux.js.org/',
-	// 	phaseOfUnderstanding: 'Core Tech Stack',
-	// },
-	{
-		name: 'Node',
-		url: 'https://nodejs.org/en/',
-		phaseOfUnderstanding: 'Competent',
-	},
-	{
-		name: 'Angular',
-		url: 'https://angular.io/',
-		phaseOfUnderstanding: 'Competent',
-	},
-	{
-		name: 'Reason',
-		url: 'https://reasonml.github.io/',
-		phaseOfUnderstanding: 'Actively Experimenting',
-	},
-	{
-		name: 'Flutter / Dart',
-		url: 'https://flutter.dev/',
-		phaseOfUnderstanding: 'Actively Experimenting',
-	},
-	{
-		name: 'Elm',
-		url: 'https://elm-lang.org/',
-		phaseOfUnderstanding: 'Actively Experimenting',
-	},
-	{
-		name: 'Elixir',
-		url: 'https://elixir-lang.org/',
-		phaseOfUnderstanding: 'Sooner, closer to later',
-	},
-];
+import { PhaseOfUnderstanding, technologies } from '../constants/bioItems';
 
 const categories: PhaseOfUnderstanding[] = [
 	'Core Tech Stack',
@@ -82,25 +13,51 @@ const showTechsFor = (phase: PhaseOfUnderstanding) => {
 	);
 	return (
 		<Fragment key={phase}>
-			{/* <p>{phase}</p> */}
-			<List
-				subheader={
-					<ListSubheader style={{ marginBottom: '3px' }} component="div">
-						{phase}
-					</ListSubheader>
-				}
+			<div
+				style={{
+					color: 'rgba(0,0,0,0.54)',
+					fontSize: '0.875rem',
+					fontWeight: 500,
+					margin: '0px 5px 5px 5px',
+					padding: '0px 5px',
+				}}
 			>
+				{phase}
+			</div>
+			<div style={{ marginBottom: '10px' }}>
 				{specificTechs.map((tech, index) => {
-					return <ListItemText primary={tech.name} key={index} />;
+					return (
+						<div
+							style={{
+								color: 'rgba(0,0,0,1)',
+								fontSize: '0.875rem',
+								fontWeight: 500,
+								margin: '0px 5px',
+								padding: '0px 10px',
+							}}
+						>
+							{tech.name}
+						</div>
+					);
 				})}
-			</List>
+			</div>
 		</Fragment>
 	);
 };
 export const TechStack = () => {
 	return (
 		<Fragment>
-			<h3 style={{ marginBottom: '3px' }}>Technologies</h3>
+			<div
+				style={{
+					display: 'flex',
+					flexBasis: '100%',
+					flexDirection: 'column',
+					padding: '5px',
+					margin: '0px 5px 10px 5px',
+				}}
+			>
+				<h3 style={{ margin: '0px', padding: '0px' }}>Technologies</h3>
+			</div>
 			<div
 				style={{
 					display: 'flex',

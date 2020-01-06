@@ -32,7 +32,7 @@ export const bioItems: IBioItem[] = [
 		paragraphs: [
 			`In my career I've worked as a management consultant in dozens of companies across a wide variety of sectors. I've driven complex process improvements in a contract biologics manufacuter and at one of the world's largest insulin manufacturers. I've built a distillery from the ground up, designing and leading the fabrication of the equipment as well as writing a novel automation and control system using modern web technologies.`,
 			`Currently, I'm having the most fun I've ever had in a job. I work as a software engineer where I get to build or improve existing products for a wide variety of clients.`,
-			`The common thread in my career is my love of applying an engineer's mindset to real world problems.`,
+			`The common thread in my career is my love of applying an engineer's mindset to solving real world problems.`,
 		],
 	},
 ];
@@ -103,5 +103,84 @@ export const workHistoryItems: IWorkHistoryItem[] = [
 			'React app',
 			'Full Stack application deployed through Amazon Web Services (AWS)',
 		],
+	},
+];
+
+export const educationItems: IEducationHistoryItem[] = [
+	{
+		school: 'Tufts University',
+		department: 'College of Engineering',
+		major: ['BS Chemical Engineering', 'BS Biochemistry'],
+		start: 'Aug-1997',
+		end: 'May-2001',
+	},
+];
+
+export type PhaseOfUnderstanding =
+	| 'Core Tech Stack'
+	| 'Competent'
+	| 'Actively Experimenting'
+	| 'Sooner, closer to later';
+export interface Technology {
+	icon?: JSX.Element;
+	name: string;
+	url: string;
+	phaseOfUnderstanding: PhaseOfUnderstanding;
+}
+export const technologies: Technology[] = [
+	{
+		name: 'TypeScript',
+		url: 'https://www.typescriptlang.org/',
+		phaseOfUnderstanding: 'Core Tech Stack',
+	},
+	{
+		name: 'JavaScript',
+		url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference',
+		phaseOfUnderstanding: 'Core Tech Stack',
+	},
+	{
+		name: 'React',
+		url: 'https://reactjs.org/',
+		phaseOfUnderstanding: 'Core Tech Stack',
+	},
+	{
+		name: 'Redux',
+		url: 'https://redux.js.org/',
+		phaseOfUnderstanding: 'Core Tech Stack',
+	},
+	{
+		name: 'React Native',
+		url: 'https://facebook.github.io/react-native/',
+		phaseOfUnderstanding: 'Core Tech Stack',
+	},
+	{
+		name: 'Node',
+		url: 'https://nodejs.org/en/',
+		phaseOfUnderstanding: 'Competent',
+	},
+	{
+		name: 'Angular',
+		url: 'https://angular.io/',
+		phaseOfUnderstanding: 'Competent',
+	},
+	{
+		name: 'Reason',
+		url: 'https://reasonml.github.io/',
+		phaseOfUnderstanding: 'Actively Experimenting',
+	},
+	{
+		name: 'Flutter / Dart',
+		url: 'https://flutter.dev/',
+		phaseOfUnderstanding: 'Actively Experimenting',
+	},
+	{
+		name: 'Elm',
+		url: 'https://elm-lang.org/',
+		phaseOfUnderstanding: 'Actively Experimenting',
+	},
+	{
+		name: 'Elixir',
+		url: 'https://elixir-lang.org/',
+		phaseOfUnderstanding: 'Sooner, closer to later',
 	},
 ];
