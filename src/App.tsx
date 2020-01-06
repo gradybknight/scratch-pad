@@ -10,7 +10,6 @@ import { Overview } from './screens/Overview';
 import { Projects } from './screens/Projects';
 import { ScratchPad } from './screens/ScratchPad';
 import { AboutSite } from './screens/AboutSite';
-import { Resume } from './screens/Resume';
 import { ContactInfo } from './components/ContactInfo';
 
 const App: React.FC = () => {
@@ -20,7 +19,7 @@ const App: React.FC = () => {
 
 	return (
 		<div>
-			<Paper elevation={0} variant="outlined">
+			<Paper elevation={0}>
 				<Header />
 				<ContactInfo />
 				<NavBar />
@@ -28,7 +27,6 @@ const App: React.FC = () => {
 			{screenName === 'Overview' ? <Overview /> : null}
 			{screenName === 'Projects' ? <Projects /> : null}
 			{screenName === 'ScratchPad' ? <ScratchPad /> : null}
-			{screenName === 'Resume' ? <Resume /> : null}
 			{screenName === 'AboutSite' ? <AboutSite /> : null}
 			{isModalVisible ? <h1>MODAL</h1> : null}
 		</div>

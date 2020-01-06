@@ -1,6 +1,4 @@
 import React from 'react';
-import { bioItems } from '../constants/bioItems';
-import { BioItem } from './BioItem';
 import { workHistoryItems } from '../constants/bioItems';
 import { WorkItem } from './WorkItem';
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,14 +6,17 @@ import { RootState } from '../model/rootReducer';
 import { setSectionVisibility } from '../model/overviewInterfaceSlice';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import { Divider } from '@material-ui/core';
 
-export const Bio = () => {
+export const Work = () => {
 	const dispatch = useDispatch();
-	const { bioVisible } = useSelector(
+	const { workVisible } = useSelector(
 		(state: RootState) => state.overviewInterface
 	);
 	const toggleVisibility = (futureVis: boolean) => {
-		dispatch(setSectionVisibility({ section: 'bioVisible', value: futureVis }));
+		dispatch(
+			setSectionVisibility({ section: 'workVisible', value: futureVis })
+		);
 	};
 	return (
 		<div
@@ -30,7 +31,7 @@ export const Bio = () => {
 			}}
 		>
 			<div
-				onClick={() => toggleVisibility(!bioVisible)}
+				onClick={() => toggleVisibility(!workVisible)}
 				style={{
 					display: 'flex',
 					flexDirection: 'row',
@@ -40,8 +41,8 @@ export const Bio = () => {
 					cursor: 'pointer',
 				}}
 			>
-				<h3 style={{ margin: '0px', padding: '0px' }}>A Bit About Me:</h3>
-				{bioVisible ? (
+				<h3 style={{ margin: '0px', padding: '0px' }}>Work History</h3>
+				{workVisible ? (
 					<KeyboardArrowDownIcon
 						style={{ marginRight: '5px', color: 'blue' }}
 					/>
@@ -50,12 +51,17 @@ export const Bio = () => {
 				)}{' '}
 			</div>
 
-			{bioVisible ? (
+			{workVisible ? (
 				<div
 					style={{ display: 'flex', padding: '5px', flexDirection: 'column' }}
 				>
-					{bioItems.map(item => (
-						<BioItem paragraphs={item.paragraphs} />
+					{workHistoryItems.map((workItem, index) => (
+						<div style={{ marginTop: '5px' }}>
+							<WorkItem item={workItem} />
+							{index === workHistoryItems.length - 1 ? null : (
+								<Divider variant="fullWidth" />
+							)}
+						</div>
 					))}
 				</div>
 			) : null}

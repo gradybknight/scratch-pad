@@ -35,14 +35,9 @@ const navItems: NavItem[] = [
 		componentName: 'Projects',
 	},
 	{
-		displayName: 'Scratch Pad',
+		displayName: 'Note Pad',
 		isSelected: false,
 		componentName: 'ScratchPad',
-	},
-	{
-		displayName: 'Resume',
-		isSelected: false,
-		componentName: 'Resume',
 	},
 	{
 		displayName: 'About this site',

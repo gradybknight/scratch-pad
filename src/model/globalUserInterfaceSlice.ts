@@ -3,7 +3,6 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 export type AllowedScreens =
 	| 'Overview'
 	| 'Projects'
-	| 'Resume'
 	| 'ScratchPad'
 	| 'AboutSite';
 export interface TabInformation {
