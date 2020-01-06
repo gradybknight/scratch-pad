@@ -5,7 +5,7 @@ const categories: PhaseOfUnderstanding[] = [
 	'Core Tech Stack',
 	'Competent',
 	'Actively Experimenting',
-	'Sooner, closer to later',
+	'On My List',
 ];
 const showTechsFor = (phase: PhaseOfUnderstanding) => {
 	const specificTechs = technologies.filter(

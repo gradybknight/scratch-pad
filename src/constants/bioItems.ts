@@ -36,7 +36,7 @@ export const bioItems: IBioItem[] = [
 			`At one of the world's largest insulin manufacturers I led product transfers for multiple blockbuster drugs.`,
 			`I've built a distillery from the ground up, designing and leading the fabrication of the equipment as well as writing a novel automation and control system using modern web technologies.`,
 			`The common thread in my career is my love of applying an engineer's mindset to solving real world problems.`,
-			`When I'm not writing code, you'll probably find me enjoying time with my two girls, wife, and dog. There's also a good chance you might find me sport climbing at a local crag.`,
+			`When I'm not writing code, you'll probably find me enjoying time with my two girls, wife, and dog. There's also a good chance you might find me sport climbing at a local crag, experimenting with a craft cocktail, or trying to pick up a new programming language.`,
 		],
 	},
 ];
@@ -124,7 +124,7 @@ export type PhaseOfUnderstanding =
 	| 'Core Tech Stack'
 	| 'Competent'
 	| 'Actively Experimenting'
-	| 'Sooner, closer to later';
+	| 'On My List';
 export interface Technology {
 	icon?: JSX.Element;
 	name: string;
@@ -185,6 +185,6 @@ export const technologies: Technology[] = [
 	{
 		name: 'Elixir',
 		url: 'https://elixir-lang.org/',
-		phaseOfUnderstanding: 'Sooner, closer to later',
+		phaseOfUnderstanding: 'On My List',
 	},
 ];

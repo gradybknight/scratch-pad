@@ -17,9 +17,9 @@ export interface SectionTogglePayload {
 
 let initialState: OverviewInterface = {
 	bioVisible: true,
-	workVisible: true,
-	educationVisible: true,
-	speakingVisible: true,
+	workVisible: false,
+	educationVisible: false,
+	speakingVisible: false,
 };
 
 const overviewInterfaceSlice = createSlice({
