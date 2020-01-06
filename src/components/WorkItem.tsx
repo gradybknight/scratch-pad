@@ -1,9 +1,9 @@
 import React from 'react';
-import { Divider } from '@material-ui/core';
 
 export const WorkItem = (item: any) => {
 	const {
 		company,
+		title,
 		location,
 		start,
 		end,
@@ -35,13 +35,37 @@ export const WorkItem = (item: any) => {
 					style={{
 						fontSize: '1.15rem',
 						fontWeight: 'bold',
+						marginBottom: '5px',
 					}}
 				>
-					{company}
+					{company} - {title}
 				</div>
 				{paragraphs.map((p: string) => (
 					<div>{p}</div>
 				))}
+				<div
+					style={{
+						marginTop: '5px',
+					}}
+				>
+					<span
+						style={{
+							fontWeight: 'bold',
+							marginTop: '5px',
+						}}
+					>
+						Technology Stack:{' '}
+					</span>
+					{technologyStack.map((tech: string, idx: number) => {
+						return (
+							<span>
+								{' '}
+								{tech}
+								{idx !== technologyStack.length - 1 ? ' ||' : null}
+							</span>
+						);
+					})}
+				</div>
 			</div>
 		</div>
 	);
