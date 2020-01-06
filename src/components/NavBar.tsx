@@ -1,7 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../model/rootReducer';
-import { setCurrentTab } from '../model/globalUserInterfaceSlice';
+import {
+	setCurrentTab,
+	TabInformation,
+	AllowedScreens,
+} from '../model/globalUserInterfaceSlice';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -17,27 +21,28 @@ const useStyles = makeStyles({
 export interface NavItem {
 	displayName: string;
 	isSelected: boolean;
+	componentName: AllowedScreens;
 }
 const navItems: NavItem[] = [
 	{
 		displayName: 'Overview',
 		isSelected: true,
+		componentName: 'Overview',
 	},
 	{
 		displayName: 'Projects',
 		isSelected: false,
+		componentName: 'Projects',
 	},
 	{
-		displayName: 'Scratch Pad',
+		displayName: 'Note Pad',
 		isSelected: false,
-	},
-	{
-		displayName: 'Resume',
-		isSelected: false,
+		componentName: 'ScratchPad',
 	},
 	{
 		displayName: 'About this site',
 		isSelected: false,
+		componentName: 'AboutSite',
 	},
 ];
 
@@ -49,7 +54,11 @@ export const NavBar = () => {
 	const classes = useStyles();
 
 	const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
-		dispatch(setCurrentTab(newValue));
+		const tabInformation: TabInformation = {
+			screenName: navItems[newValue].componentName,
+			tabIndex: newValue,
+		};
+		dispatch(setCurrentTab(tabInformation));
 	};
 
 	return (

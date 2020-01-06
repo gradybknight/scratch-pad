@@ -9,25 +9,25 @@ import { NavBar } from './components/NavBar';
 import { Overview } from './screens/Overview';
 import { Projects } from './screens/Projects';
 import { ScratchPad } from './screens/ScratchPad';
-import { Resume } from './screens/Resume';
+import { AboutSite } from './screens/AboutSite';
 import { ContactInfo } from './components/ContactInfo';
 
 const App: React.FC = () => {
-	const { isModalVisible } = useSelector(
+	const { isModalVisible, screenName } = useSelector(
 		(state: RootState) => state.globalUserInterface
 	);
 
 	return (
 		<div>
-			<Paper elevation={0} variant="outlined">
+			<Paper elevation={0}>
 				<Header />
 				<ContactInfo />
 				<NavBar />
 			</Paper>
-			<Overview />
-			<Projects />
-			<ScratchPad />
-			<Resume />
+			{screenName === 'Overview' ? <Overview /> : null}
+			{screenName === 'Projects' ? <Projects /> : null}
+			{screenName === 'ScratchPad' ? <ScratchPad /> : null}
+			{screenName === 'AboutSite' ? <AboutSite /> : null}
 			{isModalVisible ? <h1>MODAL</h1> : null}
 		</div>
 	);

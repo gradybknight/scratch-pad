@@ -17,6 +17,16 @@ const contactInfoItems: ContactInfoProps[] = [
 		title: 'LinkedIn',
 		icon: <LinkedInIcon />,
 	},
+	{
+		url: '919.800.1473',
+		title: '919.800.1473',
+		icon: <PhoneIphoneIcon />,
+	},
+	{
+		url: 'mailto:grady.knight@gmail.com',
+		title: 'grady.knight@gmail.com',
+		icon: <EmailIcon />,
+	},
 ];
 
 export const ContactInfo = () => {
@@ -28,8 +38,8 @@ export const ContactInfo = () => {
 				alignItems: 'center',
 			}}
 		>
-			{contactInfoItems.map(item => {
-				return <ContactInfoItem {...item} />;
+			{contactInfoItems.map((item, index) => {
+				return <ContactInfoItem key={index} {...item} />;
 			})}
 		</div>
 	);
