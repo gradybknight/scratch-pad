@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -44,24 +43,22 @@ export default function PinetopCard() {
 
 	return (
 		<Card className={classes.card}>
-			<CardActionArea>
-				<CardMedia
-					className={classes.media}
-					image={pinetop}
-					title="Pinetop Distillery"
-				/>
-				<CardContent>
-					<Typography gutterBottom variant="h5" component="h2">
-						Pinetop Distillery
-					</Typography>
-					<Typography variant="body2" color="textSecondary" component="p">
-						Complete greenfield design of a fully automated distillery
-					</Typography>
-					<Typography variant="body2" color="textSecondary" component="p">
-						React frontend controlling entire operation through Node backend
-					</Typography>
-				</CardContent>
-			</CardActionArea>
+			<CardMedia
+				className={classes.media}
+				image={pinetop}
+				title="Pinetop Distillery"
+			/>
+			<CardContent>
+				<Typography gutterBottom variant="h5" component="h2">
+					Pinetop Distillery
+				</Typography>
+				<Typography variant="body2" color="textSecondary" component="p">
+					Complete greenfield design of a fully automated distillery
+				</Typography>
+				<Typography variant="body2" color="textSecondary" component="p">
+					React frontend controlling entire operation through Node backend
+				</Typography>
+			</CardContent>
 			<CardActions>
 				<div className={classes.flexRow}>
 					<Button size="small" color="primary" onClick={clickAway}>
