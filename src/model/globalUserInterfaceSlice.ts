@@ -15,8 +15,8 @@ type OverallDisplayState = {
 } & TabInformation;
 
 let initialState: OverallDisplayState = {
-	tabIndex: 0,
-	screenName: 'Overview',
+	tabIndex: 1,
+	screenName: 'Projects',
 	isModalVisible: false,
 };
 
