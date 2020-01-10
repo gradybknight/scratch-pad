@@ -55,24 +55,6 @@ export const AboutSite = () => {
 					This is simply Material UI with a few inline styles thrown in for good
 					measure.
 				</Typography>
-				<Typography
-					className={classes.paddingVertical}
-					variant="body2"
-					color="textSecondary"
-					component="p"
-				>
-					This app will own a slice of redux state from the portfolio site. This
-					will allow it to be extracted to a standalone app.
-				</Typography>
-				<Typography
-					className={classes.paddingVertical}
-					variant="body2"
-					color="textSecondary"
-					component="p"
-				>
-					Finally, this will give me an app to use to experiment with{' '}
-					<a href="https://reasonml.github.io/">Reason</a>
-				</Typography>
 			</Paper>
 		</Paper>
 	);

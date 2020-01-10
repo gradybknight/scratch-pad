@@ -58,6 +58,11 @@ export default function PinetopCard() {
 				<Typography variant="body2" color="textSecondary" component="p">
 					React frontend controlling entire operation through Node backend
 				</Typography>
+				<Typography variant="body2" color="textSecondary" component="p">
+					There's simply too much to summarize for the distillery. Get in
+					contact with me: I'm happy to give any details and samples of the
+					product!
+				</Typography>
 			</CardContent>
 			<CardActions>
 				<div className={classes.flexRow}>
