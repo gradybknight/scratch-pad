@@ -18,7 +18,7 @@ export const eductionHistory: EduInformation[] = [
 		schoolLogo: 'TuftsLogo.png',
 		yearEnd: 2001,
 		yearStart: 1997,
-		majors: ['BS Chemical Engineering', 'Biochemistry'],
+		majors: ['Chemical Engineering', 'Biochemistry'],
 	},
 	{
 		certificate: false,
@@ -26,9 +26,9 @@ export const eductionHistory: EduInformation[] = [
 		location: 'Bloomington, IN',
 		school: 'Indiana University Department of Chemistry',
 		schoolLogo: 'Indiana.png',
-		yearEnd: 2001,
-		yearStart: 2002,
-		majors: [],
+		yearEnd: 2002,
+		yearStart: 2001,
+		majors: ['Organic Chemistry - Total Synthesis'],
 	},
 	{
 		certificate: true,
