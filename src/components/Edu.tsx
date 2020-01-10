@@ -1,22 +1,25 @@
 import React from 'react';
-import { bioItems } from '../constants/bioItems';
-import { BioItem } from './BioItem';
-// import { workHistoryItems } from '../constants/bioItems';
-// import { WorkItem } from './WorkItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../model/rootReducer';
 import { setSectionVisibility } from '../model/overviewInterfaceSlice';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import { Divider } from '@material-ui/core';
 
-export const Bio = () => {
+import EduTile from './EduTile';
+import { eductionHistory } from '../constants/eduItems';
+
+export const Edu = () => {
 	const dispatch = useDispatch();
-	const { bioVisible } = useSelector(
+	const { educationVisible } = useSelector(
 		(state: RootState) => state.overviewInterface
 	);
 	const toggleVisibility = (futureVis: boolean) => {
-		dispatch(setSectionVisibility({ section: 'bioVisible', value: futureVis }));
+		dispatch(
+			setSectionVisibility({ section: 'educationVisible', value: futureVis })
+		);
 	};
+
 	return (
 		<div
 			style={{
@@ -30,7 +33,7 @@ export const Bio = () => {
 			}}
 		>
 			<div
-				onClick={() => toggleVisibility(!bioVisible)}
+				onClick={() => toggleVisibility(!educationVisible)}
 				style={{
 					display: 'flex',
 					flexDirection: 'row',
@@ -40,8 +43,8 @@ export const Bio = () => {
 					cursor: 'pointer',
 				}}
 			>
-				<h3 style={{ margin: '0px', padding: '0px' }}>A Bit About Me:</h3>
-				{bioVisible ? (
+				<h3 style={{ margin: '0px', padding: '0px' }}>Education</h3>
+				{educationVisible ? (
 					<KeyboardArrowDownIcon
 						style={{ marginRight: '5px', color: 'blue' }}
 					/>
@@ -50,12 +53,27 @@ export const Bio = () => {
 				)}{' '}
 			</div>
 
-			{bioVisible ? (
+			{educationVisible ? (
 				<div
 					style={{ display: 'flex', padding: '5px', flexDirection: 'column' }}
 				>
-					{bioItems.map((item, index) => (
-						<BioItem key={index} paragraphs={item.paragraphs} />
+					{eductionHistory.map((eduItem, index) => (
+						<div style={{ marginTop: '5px' }}>
+							<EduTile
+								certificate={eduItem.certificate}
+								degree={eduItem.degree}
+								location={eduItem.location}
+								school={eduItem.school}
+								schoolLogo={eduItem.schoolLogo}
+								yearStart={eduItem.yearStart}
+								yearEnd={eduItem.yearEnd}
+								majors={eduItem.majors}
+								key={index}
+							/>
+							{index === eductionHistory.length - 1 ? null : (
+								<Divider variant="fullWidth" />
+							)}
+						</div>
 					))}
 				</div>
 			) : null}

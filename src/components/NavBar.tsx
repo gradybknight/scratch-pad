@@ -68,6 +68,7 @@ export const NavBar = () => {
 				onChange={handleChange}
 				indicatorColor="primary"
 				textColor="primary"
+				scrollButtons="auto"
 				centered
 			>
 				{navItems.map((navItem, index) => {

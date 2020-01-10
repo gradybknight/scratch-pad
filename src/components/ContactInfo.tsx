@@ -36,6 +36,7 @@ export const ContactInfo = () => {
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
+				flexWrap: 'wrap',
 			}}
 		>
 			{contactInfoItems.map((item, index) => {

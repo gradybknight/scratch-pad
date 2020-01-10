@@ -15,8 +15,8 @@ type OverallDisplayState = {
 } & TabInformation;
 
 let initialState: OverallDisplayState = {
-	tabIndex: 2,
-	screenName: 'ScratchPad',
+	tabIndex: 0,
+	screenName: 'Overview',
 	isModalVisible: false,
 };
 
