@@ -1,6 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { EduInformation } from '../constants/eduItems';
+import { Avatar } from '@material-ui/core';
+import iu from '../images/iu.jpeg';
+import tufts from '../images/tufts.jpeg';
+import unc from '../images/unc.jpg';
 
 const useStyles = makeStyles({
 	flexRow: {
@@ -8,6 +12,7 @@ const useStyles = makeStyles({
 		width: '100%',
 		alignContent: 'center',
 		justifyContent: 'space-between',
+		marginBottom: '5px',
 	},
 	leftColumn: {
 		flexBasis: '1',
@@ -55,18 +60,24 @@ const EduTile = ({
 	certificate,
 }: EduInformation) => {
 	const classes = useStyles();
+	const theLogo = schoolLogo === 'iu' ? iu : schoolLogo === 'unc' ? unc : tufts;
 
 	return (
 		<div className={classes.flexRow}>
-			{/* <div className={classes.leftColumn}>{schoolLogo}</div> */}
 			<div className={classes.centerColumn}>
-				<div className={classes.majorFont}>{school}</div>
-				<div className={classes.pushRight}>{!certificate && degree}</div>
-				<div className={classes.pushRight}>
-					{majors &&
-						majors.map(major => (
-							<div className={classes.minorFont}>{major}</div>
-						))}
+				<div style={{ display: 'flex', flexDirection: 'row' }}>
+					<Avatar alt={school} src={theLogo} variant="square" />
+					{/* <img alt={school} src={iu} /> */}
+					<div className={(classes.centerColumn, classes.pushRight)}>
+						<div className={classes.majorFont}>{school}</div>
+						<div className={classes.pushRight}>{!certificate && degree}</div>
+						<div className={classes.pushRight}>
+							{majors &&
+								majors.map(major => (
+									<div className={classes.minorFont}>{major}</div>
+								))}
+						</div>
+					</div>
 				</div>
 			</div>
 			<div className={(classes.rightColumn, classes.minorFont)}>
