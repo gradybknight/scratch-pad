@@ -16,7 +16,7 @@ export const WorkItem = (item: any) => {
 				style={{
 					display: 'flex',
 					flexDirection: 'column',
-					flexBasis: '30%',
+					flexBasis: '20%',
 				}}
 			>
 				<div>
@@ -28,7 +28,7 @@ export const WorkItem = (item: any) => {
 				style={{
 					display: 'flex',
 					flexDirection: 'column',
-					flexBasis: '70%',
+					flexBasis: '80%',
 				}}
 			>
 				<div
@@ -40,9 +40,11 @@ export const WorkItem = (item: any) => {
 				>
 					{company} - {title}
 				</div>
-				{paragraphs.map((p: string) => (
-					<div>{p}</div>
-				))}
+				<ul style={{ margin: '0px' }}>
+					{paragraphs.map((p: string) => (
+						<li style={{ marginBottom: '3px' }}>{p}</li>
+					))}
+				</ul>
 				<div
 					style={{
 						marginTop: '5px',

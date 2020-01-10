@@ -28,6 +28,7 @@ const showTechsFor = (phase: PhaseOfUnderstanding) => {
 				{specificTechs.map((tech, index) => {
 					return (
 						<div
+							key={index}
 							style={{
 								color: 'rgba(0,0,0,1)',
 								fontSize: '0.875rem',

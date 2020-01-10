@@ -66,7 +66,12 @@ const EduTile = ({
 		<div className={classes.flexRow}>
 			<div className={classes.centerColumn}>
 				<div style={{ display: 'flex', flexDirection: 'row' }}>
-					<Avatar alt={school} src={theLogo} variant="square" />
+					<Avatar
+						alt={school}
+						src={theLogo}
+						variant="square"
+						style={{ marginRight: '10px' }}
+					/>
 					{/* <img alt={school} src={iu} /> */}
 					<div className={(classes.centerColumn, classes.pushRight)}>
 						<div className={classes.majorFont}>{school}</div>

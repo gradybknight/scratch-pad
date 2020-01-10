@@ -10,8 +10,8 @@ export const BioItem = (item: IBioItem) => {
 			}}
 		>
 			<div>
-				{item.paragraphs.map(p => (
-					<p>{p}</p>
+				{item.paragraphs.map((p, i) => (
+					<p key={i}>{p}</p>
 				))}
 			</div>
 		</div>

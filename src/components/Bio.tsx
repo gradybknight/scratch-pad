@@ -1,8 +1,8 @@
 import React from 'react';
 import { bioItems } from '../constants/bioItems';
 import { BioItem } from './BioItem';
-import { workHistoryItems } from '../constants/bioItems';
-import { WorkItem } from './WorkItem';
+// import { workHistoryItems } from '../constants/bioItems';
+// import { WorkItem } from './WorkItem';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../model/rootReducer';
 import { setSectionVisibility } from '../model/overviewInterfaceSlice';
@@ -54,8 +54,8 @@ export const Bio = () => {
 				<div
 					style={{ display: 'flex', padding: '5px', flexDirection: 'column' }}
 				>
-					{bioItems.map(item => (
-						<BioItem paragraphs={item.paragraphs} />
+					{bioItems.map((item, index) => (
+						<BioItem key={index} paragraphs={item.paragraphs} />
 					))}
 				</div>
 			) : null}
