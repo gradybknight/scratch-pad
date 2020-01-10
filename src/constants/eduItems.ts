@@ -38,6 +38,6 @@ export const eductionHistory: EduInformation[] = [
 		schoolLogo: 'UNC.png',
 		yearEnd: 2018,
 		yearStart: 2018,
-		majors: ['BS Chemical Engineering', 'Biochemistry'],
+		majors: [],
 	},
 ];

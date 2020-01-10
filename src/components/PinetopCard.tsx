@@ -22,6 +22,7 @@ import { ReactComponent as Phidget } from '../images/phidget.svg';
 const useStyles = makeStyles({
 	card: {
 		maxWidth: 345,
+		marginBottom: '15px',
 	},
 	media: {
 		height: 240,

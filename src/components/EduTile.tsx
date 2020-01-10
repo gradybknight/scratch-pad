@@ -40,9 +40,14 @@ const EduTile = ({
 
 	return (
 		<div className={classes.flexRow}>
-			<div className={classes.leftColumn}>{school}</div>
-			<div className={classes.centerColumn}>{majors}</div>
+			<div className={classes.leftColumn}>{schoolLogo}</div>
+			<div className={classes.centerColumn}>
+				<div>{school}</div>
+				<div>{!certificate && degree}</div>
+				<div>{majors && majors.map(major => <div>major</div>)}</div>
+			</div>
 			<div className={classes.rightColumn}>
+				<div>{location}</div>
 				{yearStart}-{yearEnd}
 			</div>
 		</div>

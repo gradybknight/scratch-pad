@@ -16,6 +16,7 @@ import { ReactComponent as Mui } from '../images/mui.svg';
 const useStyles = makeStyles({
 	card: {
 		maxWidth: 345,
+		marginBottom: '15px',
 	},
 	media: {
 		height: 240,

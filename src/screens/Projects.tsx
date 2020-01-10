@@ -10,6 +10,7 @@ const useStyles = makeStyles({
 		width: '100%',
 		flexDirection: 'row',
 		justifyContent: 'space-evenly',
+		flexWrap: 'wrap',
 	},
 });
 
