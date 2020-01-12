@@ -65,10 +65,10 @@ export const workHistoryItems: IWorkHistoryItem[] = [
 			'Angular',
 		],
 		paragraphs: [
-			'Built the data management layer of a clientapplication including adding redux and datapersistence to the application.',
-			`Participated in the de novo creation and delivery ofa React Native application to streamline corebusiness processes for our client. This includedadding authentication and redux to the application.Additional work creating UI components screenswhich interact with the device's camera.`,
-			`Developed dashboards and visualizations as part ofthe Cisco UX team. This work largely centered onAngular and RxJS. Additionally, this involvedmodifying the core component library for Cisco's UXangular apps.`,
-			`Worked with a financial technology company torefactor a complex React/Redux applicationincluding migration to modern React practices.`,
+			'Built the data management layer of a clientapplication including adding redux and data persistence to the application.',
+			`Participated in the de novo creation and delivery of a React Native application to streamline core business processes for our client. This included adding authentication and redux to the application. Additional work creating UI components screens which interact with the device's camera.`,
+			`Developed dashboards and visualizations as part of the Cisco UX team. This work largely centered on Angular and RxJS. Additionally, this involved modifying the core component library for Cisco's UX angular apps.`,
+			`Worked with a financial technology company to refactor a complex React/Redux application including migration to modern React practices.`,
 		],
 	},
 	{
@@ -88,9 +88,9 @@ export const workHistoryItems: IWorkHistoryItem[] = [
 			'Phidget (Pi connected controllers)',
 		],
 		paragraphs: [
-			`Responsible for constructing and maintainingprediction models to assess total capacity as well asunit operation performance.`,
+			`Responsible for constructing and maintaining prediction models to assess total capacity as well asunit operation performance.`,
 			`Responsible for setting direction for operations andsupply chain.`,
-			`Designing and implementing a full stack solution tomonitor and control critical operations in thedistillery. The tech stack includes React/Redux/Typescript as a single page app, Node/Expresshosted in Amazon Web Services (AWS) as thebackend, and Raspberry Pis as connected devicesto either collect process data or control set points.`,
+			`Designing and implementing a full stack solution to monitor and control critical operations in the distillery. The tech stack includes React/Redux/Typescript as a single page app, Node/Express hosted in Amazon Web Services (AWS) as the backend, and Raspberry Pis as connected devices to either collect process data or control set points.`,
 		],
 	},
 	{
@@ -129,8 +129,8 @@ export const workHistoryItems: IWorkHistoryItem[] = [
 			'Phidget (Pi connected controllers)',
 		],
 		paragraphs: [
-			`Designed novel Discrete Event Process Simulations tomodel factory operations.`,
-			`Designed webapp to track of critical manufacturingactivities. Designed reporting tools to allow forcross-site visualization of data.`,
+			`Designed novel Discrete Event Process Simulations to model factory operations.`,
+			`Designed web app to track of critical manufacturing activities. Designed reporting tools to allow for cross-site visualization of data.`,
 			`Designed connected (IoT) data collection systems.`,
 		],
 	},
