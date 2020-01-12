@@ -117,7 +117,7 @@ export const workHistoryItems: IWorkHistoryItem[] = [
 	{
 		company: 'Novo Nordisk',
 		title: 'Senior Black Belt (Senior Technical Project Manager)',
-		location: 'Raleigh, NC',
+		location: 'Clayton, NC',
 		start: 'Jul-2010',
 		end: 'Feb-2019',
 		technologyStack: [
