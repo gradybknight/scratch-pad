@@ -6,8 +6,43 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { Divider } from '@material-ui/core';
 
+import { Avatar } from '@material-ui/core';
+import iu from '../images/iu.jpeg';
+import tufts from '../images/tufts.jpeg';
+import unc from '../images/unc.jpg';
+
 import EduTile from './EduTile';
 import { eductionHistory } from '../constants/eduItems';
+
+const renderTiles = () => {
+	return (
+		<div
+			style={{
+				display: 'flex',
+				flexDirection: 'row',
+			}}
+		>
+			<Avatar
+				alt="Tufts University"
+				src={tufts}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+			<Avatar
+				alt="Indiana University"
+				src={iu}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+			<Avatar
+				alt="UNC Coding Bootcamp"
+				src={unc}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+		</div>
+	);
+};
 
 export const Edu = () => {
 	const dispatch = useDispatch();
@@ -44,15 +79,15 @@ export const Edu = () => {
 				}}
 			>
 				<h3 style={{ margin: '0px', padding: '0px' }}>Education</h3>
+				{educationVisible ? null : renderTiles()}
 				{educationVisible ? (
 					<KeyboardArrowDownIcon
 						style={{ marginRight: '5px', color: 'blue' }}
 					/>
 				) : (
 					<KeyboardArrowUpIcon style={{ marginRight: '5px', color: 'blue' }} />
-				)}{' '}
+				)}
 			</div>
-
 			{educationVisible ? (
 				<div
 					style={{ display: 'flex', padding: '5px', flexDirection: 'column' }}

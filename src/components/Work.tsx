@@ -7,6 +7,61 @@ import { setSectionVisibility } from '../model/overviewInterfaceSlice';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { Divider } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
+import sb from '../images/sb.png';
+import shv from '../images/shv.png';
+import pt from '../images/pt.png';
+import novo from '../images/novo.jpg';
+import diosynth from '../images/diosynth.jpg';
+import celerant from '../images/celerant.png';
+
+const renderTiles = () => {
+	return (
+		<div
+			style={{
+				display: 'flex',
+				flexDirection: 'row',
+			}}
+		>
+			<Avatar
+				alt="Smashing Boxes"
+				src={sb}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+			<Avatar
+				alt="Social House Vodka"
+				src={shv}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+			<Avatar
+				alt="Pinetop Distillery"
+				src={pt}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+			<Avatar
+				alt="Novo Nordisk"
+				src={novo}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+			<Avatar
+				alt="Diosynth Biotechnology"
+				src={diosynth}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+			<Avatar
+				alt="Celerant Consulting"
+				src={celerant}
+				variant="square"
+				style={{ marginRight: '10px', width: '30px', height: '30px' }}
+			/>
+		</div>
+	);
+};
 
 export const Work = () => {
 	const dispatch = useDispatch();
@@ -42,6 +97,7 @@ export const Work = () => {
 				}}
 			>
 				<h3 style={{ margin: '0px', padding: '0px' }}>Work History</h3>
+				{workVisible ? null : renderTiles()}
 				{workVisible ? (
 					<KeyboardArrowDownIcon
 						style={{ marginRight: '5px', color: 'blue' }}
