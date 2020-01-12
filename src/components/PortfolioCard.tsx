@@ -30,7 +30,7 @@ const useStyles = makeStyles({
 });
 
 const clickAway = () => {
-	window.open('http://www.google.com');
+	window.open('https://github.com/gradybknight/scratch-pad');
 };
 
 export default function PortfolioCard() {
