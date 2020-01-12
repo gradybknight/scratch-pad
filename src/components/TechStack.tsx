@@ -11,7 +11,7 @@ import { ReactComponent as Angular } from '../images/ng.svg';
 import { ReactComponent as Flutter } from '../images/flutter.svg';
 import { ReactComponent as RN } from '../images/RN.svg';
 import { ReactComponent as Reason } from '../images/reason.svg';
-import { Avatar } from '@material-ui/core';
+// import { Avatar } from '@material-ui/core';
 import elixir from '../images/elixir.png';
 
 const renderLogo = (tech: string) => {

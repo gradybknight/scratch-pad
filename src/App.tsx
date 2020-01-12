@@ -1,6 +1,7 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from './model/rootReducer';
+import { setScreenSize } from './model/globalUserInterfaceSlice';
 
 import Paper from '@material-ui/core/Paper';
 
@@ -16,7 +17,15 @@ const App: React.FC = () => {
 	const { isModalVisible, screenName } = useSelector(
 		(state: RootState) => state.globalUserInterface
 	);
+	const dispatch = useDispatch();
+	useEffect(() => {
+		dispatch(setScreenSize(window.innerWidth));
+	});
+	const updateSize = () => {
+		dispatch(setScreenSize(window.innerWidth));
+	};
 
+	window.addEventListener('resize', updateSize);
 	return (
 		<div>
 			<Paper elevation={0}>
