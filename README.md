@@ -1,4 +1,4 @@
-This project is deployed at [Grady Knight](http://www.gradyknight.com).
+This project is deployed at [Grady Knight](http://gradyknight.com).
 
 ## Purpose of the Site 
 
