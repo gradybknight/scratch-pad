@@ -18,7 +18,7 @@ const contactInfoItems: ContactInfoProps[] = [
 		icon: <LinkedInIcon />,
 	},
 	{
-		url: '919.800.1473',
+		url: 'tel:919.800.1473',
 		title: '919.800.1473',
 		icon: <PhoneIphoneIcon />,
 	},
