@@ -23,35 +23,35 @@ export interface NavItem {
 	isSelected: boolean;
 	componentName: AllowedScreens;
 }
-const navItems: NavItem[] = [
-	{
-		displayName: 'Overview',
-		isSelected: true,
-		componentName: 'Overview',
-	},
-	{
-		displayName: 'Projects',
-		isSelected: false,
-		componentName: 'Projects',
-	},
-	{
-		displayName: 'Note Pad',
-		isSelected: false,
-		componentName: 'ScratchPad',
-	},
-	{
-		displayName: 'About this site',
-		isSelected: false,
-		componentName: 'AboutSite',
-	},
-];
 
 export const NavBar = () => {
 	const dispatch = useDispatch();
-	const { tabIndex } = useSelector(
+	const { tabIndex, isBigScreen } = useSelector(
 		(state: RootState) => state.globalUserInterface
 	);
 	const classes = useStyles();
+	const navItems: NavItem[] = [
+		{
+			displayName: 'Overview',
+			isSelected: true,
+			componentName: 'Overview',
+		},
+		{
+			displayName: 'Projects',
+			isSelected: false,
+			componentName: 'Projects',
+		},
+		{
+			displayName: 'Note Pad',
+			isSelected: false,
+			componentName: 'ScratchPad',
+		},
+		{
+			displayName: isBigScreen ? 'About this site' : 'About',
+			isSelected: false,
+			componentName: 'AboutSite',
+		},
+	];
 
 	const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
 		const tabInformation: TabInformation = {

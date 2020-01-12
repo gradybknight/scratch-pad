@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { RootState } from '../model/rootReducer';
 
 const useStyles = makeStyles({
 	paddingVertical: {
@@ -10,14 +12,17 @@ const useStyles = makeStyles({
 });
 
 export const ScratchPad = () => {
+	const { isBigScreen } = useSelector(
+		(state: RootState) => state.globalUserInterface
+	);
 	const classes = useStyles();
 	return (
 		<Paper style={{ padding: '10px', minHeight: '80vh' }}>
 			<Paper
 				style={{
 					padding: '3%',
-					marginRight: '20%',
-					marginLeft: '20%',
+					marginRight: isBigScreen ? '20%' : '0%',
+					marginLeft: isBigScreen ? '20%' : '0%',
 					minHeight: '100%',
 				}}
 				elevation={5}
