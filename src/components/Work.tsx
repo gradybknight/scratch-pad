@@ -11,7 +11,7 @@ import { Avatar } from '@material-ui/core';
 import sb from '../images/sb.png';
 import shv from '../images/shv.png';
 import pt from '../images/pt.png';
-import novo from '../images/novo.jpg';
+import novo from '../images/novo.png';
 import diosynth from '../images/diosynth.jpg';
 import celerant from '../images/celerant.png';
 
