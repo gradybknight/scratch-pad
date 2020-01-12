@@ -33,7 +33,7 @@ export const AboutSite = () => {
 					color="textPrimary"
 					component="p"
 				>
-					Why minimal styling?
+					Why This Site?
 				</Typography>
 				<Typography
 					className={classes.paddingVertical}
