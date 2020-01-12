@@ -37,7 +37,7 @@ export const AboutSite = () => {
 					component="p"
 				>
 					The primary reason is that I wanted to use this site to play with
-					moving all app state to redux (UI and data model). This isn't the
+					moving all app state to Redux (UI and data model). This isn't the
 					dominant pattern in React development but I believe it has a number of
 					advantages. It also mirrors some of the Elm architecture (which I find
 					to be a very rational approach to UIs).
@@ -51,7 +51,7 @@ export const AboutSite = () => {
 					The secondary reason is that I write styles for a large portion of my
 					day job. While this is a portfolio site, it was meant to be something
 					fun for me to build. To that end, I didn't import a commercial css
-					theme, run a wordpress site, or 'borrow' anothers portfolio template.
+					theme, run a wordpress site, or 'borrow' another's portfolio template.
 					This is simply Material UI with a few inline styles thrown in for good
 					measure.
 				</Typography>

@@ -36,7 +36,7 @@ export const ScratchPad = () => {
 					color="textSecondary"
 					component="p"
 				>
-					This will eventually hold a simplified note taking app
+					This will eventually hold a simplified note taking app.
 				</Typography>
 				<Typography
 					className={classes.paddingVertical}
@@ -47,9 +47,9 @@ export const ScratchPad = () => {
 					Key features will be to:
 					<ul style={{ margin: '0px' }}>
 						<li>
-							Act as a simple frontend to take notes and persist to a backend
+							Act as a simple frontend to take notes and persist to a backend.
 						</li>
-						<li>Allow for drag and drop reordering of notes</li>
+						<li>Allow for drag and drop reordering of notes.</li>
 					</ul>
 				</Typography>
 				<Typography
@@ -68,7 +68,7 @@ export const ScratchPad = () => {
 					component="p"
 				>
 					Finally, this will give me an app to use to experiment with{' '}
-					<a href="https://reasonml.github.io/">Reason</a>
+					<a href="https://reasonml.github.io/">Reason.</a>
 				</Typography>
 			</Paper>
 		</Paper>
