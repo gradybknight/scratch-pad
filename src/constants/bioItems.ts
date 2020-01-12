@@ -31,14 +31,15 @@ export const bioItems: IBioItem[] = [
 	{
 		paragraphs: [
 			`I started writing code in HS in Pascal (I'll let you do the math on how long ago that was). In college I couldn't believe anyone would ever pay me to write code for a living, so I chose a dual major in Chemical Engineering and Biochemistry because it was a guaranteed job upon graduation.`,
-			`After spending far too long coding on the side in jobs I didn't love, I've changed careers, becoming a software engineer.`,
+			`After spending far too long coding on the side in jobs I didn't love, I changed careers, becoming a Software Engineer.`,
 			`I still can't believe I get paid to do this. However, as long as that lasts, I'm having the most fun I've had in decades getting to build or improve products for a wide variety of clients.`,
 			`Throughout my career I've worked as a management consultant in dozens of companies across a wide variety of sectors. In this work I used data-based systematic analyses to drive long lasting improvements.`,
-			`I've driven complex improvements in a contract biologics manufacuter reducing cycle times for critical processes.`,
+			`I've driven complex improvements in a contract biologics manufacturer reducing cycle times for critical processes.`,
 			`At one of the world's largest insulin manufacturers I led product transfers for multiple blockbuster drugs.`,
-			`I've built a distillery from the ground up, designing and leading the fabrication of the equipment as well as writing a novel automation and control system using modern web technologies.`,
+			`I've built a distillery from the ground up, designing and leading the fabrication of the equipment, as well as writing a novel automation and control system using modern web technologies.`,
 			`The common thread in my career is my love of applying an engineer's mindset to solving real world problems.`,
-			`When I'm not writing code, you'll probably find me enjoying time with my two girls, wife, and dog. There's also a good chance you might find me sport climbing at a local crag, experimenting with a craft cocktail, or buried in documentation trying to pick up a new programming language.`,
+			`When I'm not writing code, you'll probably find me enjoying time with my two girls, wife, and dog.`,
+			`There's also a good chance you might find me sport climbing at a local crag, experimenting with a craft cocktail, or buried in documentation trying to pick up a new programming language.`,
 		],
 	},
 ];
