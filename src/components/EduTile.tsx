@@ -14,21 +14,30 @@ const useStyles = makeStyles({
 		justifyContent: 'space-between',
 		marginBottom: '5px',
 	},
-	leftColumn: {
-		flexBasis: '1',
+	wrapper: {
 		display: 'flex',
+		width: '100%',
+		flexDirection: 'row',
+		flexBasis: '100%',
+		marginBottom: '3px',
+	},
+	//
+	leftColumn: {
+		display: 'flex',
+		flex: 1,
 		flexDirection: 'column',
+		paddingLeft: '10px',
 	},
 	centerColumn: {
-		flexBasis: '5',
 		display: 'flex',
+		flex: 7,
 		flexDirection: 'column',
 	},
 	rightColumn: {
-		flexBasis: '1',
 		display: 'flex',
+		flex: 2,
+		paddingLeft: '10px',
 		flexDirection: 'column',
-		alignContent: 'flex-end',
 	},
 	majorFont: {
 		fontSize: '1.07em',
@@ -41,11 +50,15 @@ const useStyles = makeStyles({
 		fontWeight: 500,
 	},
 	logo: {
-		width: '30px',
-		height: '30px',
+		width: '50px',
+		height: '50px',
+		marginRight: '10px',
 	},
 	pushRight: {
 		paddingLeft: '5px',
+	},
+	alignEnd: {
+		alignSelf: 'flex-end',
 	},
 });
 
@@ -63,32 +76,31 @@ const EduTile = ({
 	const theLogo = schoolLogo === 'iu' ? iu : schoolLogo === 'unc' ? unc : tufts;
 
 	return (
-		<div className={classes.flexRow}>
+		<div className={classes.wrapper}>
+			<div className={classes.leftColumn}>
+				<Avatar
+					alt={school}
+					src={theLogo}
+					variant="square"
+					style={{ marginRight: '10px', width: '50px', height: '50px' }}
+				/>
+			</div>
 			<div className={classes.centerColumn}>
-				<div style={{ display: 'flex', flexDirection: 'row' }}>
-					<Avatar
-						alt={school}
-						src={theLogo}
-						variant="square"
-						style={{ marginRight: '10px' }}
-					/>
-					{/* <img alt={school} src={iu} /> */}
-					<div className={(classes.centerColumn, classes.pushRight)}>
-						<div className={classes.majorFont}>{school}</div>
-						<div className={classes.pushRight}>{!certificate && degree}</div>
-						<div className={classes.pushRight}>
-							{majors &&
-								majors.map(major => (
-									<div className={classes.minorFont}>{major}</div>
-								))}
-						</div>
-					</div>
+				<div className={classes.majorFont}>{school}</div>
+				<div className={classes.pushRight}>{!certificate && degree}</div>
+				<div className={classes.pushRight}>
+					{majors &&
+						majors.map(major => (
+							<div className={classes.minorFont}>{major}</div>
+						))}
 				</div>
 			</div>
-			<div className={(classes.rightColumn, classes.minorFont)}>
-				<div>{location}</div>
-				<div>
-					{yearStart}-{yearEnd}
+			<div className={classes.rightColumn}>
+				<div className={classes.minorFont}>
+					<div className={classes.alignEnd}>{location}</div>
+					<div className={classes.alignEnd}>
+						{yearStart}-{yearEnd}
+					</div>
 				</div>
 			</div>
 		</div>

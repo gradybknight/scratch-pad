@@ -3,7 +3,13 @@ export interface IBioItem {
 }
 
 export interface IWorkHistoryItem {
-	company: string;
+	company:
+		| 'X/Celerant Consulting'
+		| 'FUJIFILM Diosynth Biotechnologies'
+		| 'Novo Nordisk'
+		| 'Smashing Boxes'
+		| 'Social House Vodka'
+		| 'Pinetop Distillery';
 	title: string;
 	location: string;
 	start: string;
